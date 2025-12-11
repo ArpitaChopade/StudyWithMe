@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>StudyWithMe • Tasks</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+</head>
+<body class="app-body" data-page="tasks">
+  <div class="app-shell">
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <i class="bi bi-journal-bookmark-fill"></i>
+          <div>
+            <h1>StudyWithMe</h1>
+            <div class="header-subtitle">Task manager & mini calendar</div>
+          </div>
+        </div>
+      </div>
+      <div class="header-search">
+        <input id="globalSearchInput" placeholder="Search tasks..." />
+        <span class="header-search-icon"><i class="bi bi-search"></i></span>
+        <div id="globalSearchResults" class="search-results" style="display:none;"></div>
+      </div>
+    </header>
+
+    <div class="app-layout">
+      <aside class="sidebar">
+        <div class="sidebar-title">Navigation</div>
+        <ul class="nav-list">
+          <li><a href="dashboard.html" class="nav-link" data-page="dashboard"><span class="icon bi bi-house-fill"></span> Dashboard</a></li>
+          <li><a href="subjects.html" class="nav-link" data-page="subjects"><span class="icon bi bi-collection-fill"></span> Subjects</a></li>
+          <li><a href="notes.html" class="nav-link" data-page="notes"><span class="icon bi bi-pencil-square"></span> Notes</a></li>
+          <li><a href="ai.html" class="nav-link" data-page="ai"><span class="icon bi bi-robot"></span> AI Helper</a></li>
+          <li><a href="calendar.html" class="nav-link" data-page="calendar"><span class="icon bi bi-calendar3"></span> Calendar</a></li>
+          <li><a href="tasks.html" class="nav-link" data-page="tasks"><span class="icon bi bi-check2-square"></span> Tasks</a></li>
+          <li><a href="settings.html" class="nav-link" data-page="settings"><span class="icon bi bi-gear-fill"></span> Settings</a></li>
+        </ul>
+        <div class="sidebar-footer muted">Plan deliverables</div>
+      </aside>
+
+      <main class="main-panel">
+       <section class="add-task">
+  <h2>Add Task</h2>
+  <form id="taskForm">
+
+    <div class="input-with-icon">
+      <i class="bi bi-pencil"></i>
+      <input type="text" id="taskTitle" placeholder="Task title" required />
+    </div>
+
+    <div class="input-with-icon">
+      <i class="bi bi-journal"></i>
+      <input type="text" id="taskSubject" placeholder="Subject / module" />
+    </div>
+
+    <div class="input-with-icon">
+      <i class="bi bi-calendar-event"></i>
+      <input type="date" id="taskDue" required />
+    </div>
+
+    <div class="input-with-icon">
+      <i class="bi bi-flag"></i>
+      <select id="taskPriority">
+        <option value="medium">Medium priority</option>
+        <option value="high">High priority</option>
+        <option value="low">Low priority</option>
+      </select>
+    </div>
+
+    <button type="submit" class="primary-btn">
+      Save Task <i class="bi bi-save"></i>
+    </button>
+
+  </form>
+</section>
+
+
+        <section class="task-list">
+          <div class="card-header">
+            <h2>Tasks</h2>
+            <small>Click ✔ to complete, ✕ to delete</small>
+          </div>
+          <div id="tasksContainer"></div>
+        </section>
+
+        <section class="calendar-view">
+          <div class="card-header">
+            <h2>Next 7 days</h2>
+            <small>Mini calendar for due dates</small>
+          </div>
+          <div id="tasksCalendarGrid" class="calendar-grid"></div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">StudyWithMe • Tasks</footer>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
